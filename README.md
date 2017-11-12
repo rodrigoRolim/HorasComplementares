@@ -9,4 +9,4 @@ group of complementary activity.
 ## Quick start
 
 ````
-git clone
+git clone https://github.com/rodrigoRolim/HorasComplementares.git
