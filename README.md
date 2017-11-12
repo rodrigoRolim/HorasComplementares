@@ -1,4 +1,4 @@
-# Horas complementares
+# Complementary Hours
 
 The current work intends to be a repository of complementary hours for university students. 
 Each student can save their documents proving participation in complementary hours. the software
@@ -8,7 +8,5 @@ group of complementary activity.
 
 ## Quick start
 
-´´´´
-git clone
 ````
-
+git clone
