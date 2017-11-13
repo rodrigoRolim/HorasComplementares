@@ -12,4 +12,4 @@ group of complementary activity.
 git clone https://github.com/rodrigoRolim/HorasComplementares.git 
 ````
 
-After this, execute the program into wamp.  
+After this, execute the program through wamp.  
