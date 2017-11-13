@@ -9,4 +9,6 @@ group of complementary activity.
 ## Quick start
 
 ````
-git clone https://github.com/rodrigoRolim/HorasComplementares.git
+git clone https://github.com/rodrigoRolim/HorasComplementares.git 
+
+After this, execute the program into wamp.  
