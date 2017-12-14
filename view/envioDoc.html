@@ -17,9 +17,10 @@
     .mybtn {
       position: relative;
       border: 1px solid powderblue;
-      background-color: aliceblue;
+      background-color: #1E90FF;
       margin-left: 345px;
-    
+      color: white;
+      font-weight: bold;
     }
     .btn-file {
       position: relative;
@@ -28,9 +29,11 @@
     }
     .mybtn:hover {
       background-color: skyblue;
+      color: white;
     }
     .mybtn:active {
       background-color: lightblue;
+      color: white;
     }
     .btn-file input[type=file] {
       position: absolute;
@@ -66,14 +69,7 @@
       background-color: #f1f1f1;
       height: 120%;
     }
- 
-    .navbar-right {
-    	margin-right: 20px;
-    }
-    h1, h2 {
-    	text-align: center;
-    	color: lightblue;
-    }
+    
     /* Set black background color, white text and some padding */
     footer {
       background-color: #555;
@@ -87,11 +83,8 @@
         height: auto;
         padding: 15px;
       }
-      .row.content {height:auto;}
-      .cont {
-      	height: 360px;
-      } 
-  }
+      .row.content {height:auto;} 
+    }
   </style>
 </head>
 <body>
@@ -99,13 +92,26 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
       <a class="navbar-brand" href="#">UTFTIME</a>
     </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Enviar</a></li>
+        <li><a href="/enviados">Enviados</a></li>
+        <li><a href="/aprovados">Aprovados</a></li>
+        <li><a href="/devolvidos">Devolvidos</a></li>
+        <li><a href="/progresso">Progresso</a></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
-         <li><a href="LoginAluno.html" id="aluno">Aluno</a></li>
-         <li><a href="LoginProfessor.html">Professor</a></li>
+         <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
+  </div>
 </nav>
   
 <div class="container-fluid text-center">    
@@ -113,10 +119,36 @@
     <div class="col-sm-2 sidenav">
     </div>
     <div class="col-sm-8 text-left"> 
-    <div class="container-fluid cont">
-      <h1>HORAS COMPLEMENTARES</h1>
-      <h2>UTFTIME</h2>
-    </div>
+      <div class="container-fluid">
+          <h2>Envio de arquivos</h2>
+          <hr>  
+        
+        <form method="post" enctype="multipart/form-data">
+          <div class="form-group">
+          <label for="sel1">Selecione o Grupo:</label>
+           <select class="form-control" id="sel1" name="grupo" required>
+              <option>Grupo 1</option>
+              <option>Grupo 2</option>
+              <option>Grupo 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sel4">Qnts. pontos você acredita que fez?</label>
+            <input type="text" class="form-control" id="sel4" placeholder="Ex: 20" name="pontos" required>
+          </div>
+          <div class="form-group">
+         <!-- <span class="btn btn-default btn-file">
+            Browse <input type="file">
+          </span>-->
+           <input type="file" class="filestyle" data-classButton="btn btn-primary" data-classInput="input-large"  accept=".jpg, .jpeg, .png, .docx, .pdf, .doc" multiple name="arquivo" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn mybtn btn-lg">Enviar</button>
+        </div>
+        </form>
+        
+        
+      </div>
     </div>
     <div class="col-sm-2 sidenav">
 
@@ -129,5 +161,11 @@
   <p>Horas Complementares</p>
 </footer>
 <!--<script type="text/javascript" src="teste.js"></script>-->
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"></script>
+<script type="text/javascript">
+ $(":file").filestyle({buttonBefore: true});
+ $(":file").filestyle({classInput: "input-large"});
+
+</script>
 </body>
 </html>

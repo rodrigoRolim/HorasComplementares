@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -26,8 +26,8 @@
     .ative {
       /*background-color: greenyellow;*/
       cursor: pointer;
-      background-color: hsla(240, 60%, 70%, 0.3);
-      padding: 5%;
+      background-color: hsla(200, 60%, 70%, 0.3);
+      padding: 3%;
       border: 1px solid lightgray;
     }
     .ative:active {
@@ -64,11 +64,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="envioDoc.html">Enviar</a></li>
-        <li><a href="enviados.html">Enviados</a></li>
-        <li class="active"><a href="aprovadosAlunos">Aprovados</a></li>
-        <li><a href="#">Devolvidos</a></li>
-        <li><a href="progresso.html">Progresso</a></li>
+        <li><a href="/enviar">Enviar</a></li>
+        <li><a href="/enviados">Enviados</a></li>
+        <li class="active"><a href="#">Aprovados</a></li>
+        <li><a href="/devolvidos">Devolvidos</a></li>
+        <li><a href="/progresso">Progresso</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
