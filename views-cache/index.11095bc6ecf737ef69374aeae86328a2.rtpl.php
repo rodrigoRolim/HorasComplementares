@@ -1,0 +1,78 @@
+<?php if(!class_exists('Rain\Tpl')){exit;}?><nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">UTFTIME</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/enviar">Enviar</a></li>
+        <li><a href="/enviados">Enviados</a></li>
+        <li class="active"><a href="#">Aprovados</a></li>
+        <li><a href="/devolvidos">Devolvidos</a></li>
+        <li><a href="/progresso">Progresso</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+     
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <hr>
+      <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Grupo</th>
+                      <th>Ítem</th>
+                      <th>Pontos</th>
+                      <th>Abrir</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+           
+                    <tr class="rowTable" id="line1">
+                      
+                      <td onclick="location.href='#'">Grupo 1</td>
+                      <td onclick="location.href='#'">Ítem I</td>
+                      <td onclick="location.href='#'" class="pencil">20</td>
+                      
+                      <td><i class="glyphicon glyphicon-save ative"></i></td>
+
+                    </tr>
+                     
+                    <tr class="rowTable">
+
+                      <td onclick="location.href='#'">Grupo 2</td>
+                      <td onclick="location.href='#'">Item III</td>
+                      <td onclick="location.href='#'">10</td>
+                      <td><i class="glyphicon glyphicon-save ative"></i></td>
+
+                    </tr>
+
+                    <tr class="rowTable">
+
+                      <td onclick="location.href='#'">Grupo 3</td>
+                      <td onclick="location.href='#'">Ítem VI</td>
+                      <td onclick="location.href='#'">10</td>
+                      <td><i class="glyphicon glyphicon-save ative"></i></td>
+
+                    </tr>
+                  </tbody>
+                </table>
+    </div>
+    <div class="col-sm-2 sidenav">
+     
+    </div>
+  </div>
+</div>
