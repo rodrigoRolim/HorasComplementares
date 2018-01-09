@@ -3,15 +3,17 @@
 <head>
 	<title>horas complementares</title>
 	<link rel="stylesheet" type="text/css" href="utfstyle.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<div class="container">
 		<div class="header">
 			<div class="l-u"><p>UTFtime</p></div>
-			<div class="l-out"><a href="#">logout</a></div>
+			<div class="l-out"><a href="#">Logout</a></div>
+			<div id="bar">&#9776;</div>
 		</div>
 
-		<div class="sidebar">
+		<div class="sidebar off" id="on-off-s">
 			<nav class="n-i">	
 				<a href="#">Item 1</a>
 				<a href="#">Item 2</a>
@@ -22,14 +24,44 @@
 
 			</nav>
 		</div>
+		<script type="text/javascript">
+			var sidebar = document.getElementById("on-off-s");
+			document.getElementById("bar").onclick = function(){
+				if(sidebar.className === "sidebar off"){
+					sidebar.className = "sidebar on";
+				} else {
+					sidebar.className = "sidebar off";
+				}
+			}
+		</script>
 		<div class="main">
 			<div class="frm">
-				<form>
-					<div class="g-grp">
-						<label for="inp-g">Grupo</label>
-						<input type="text" name="group" id="inp-g">
-					</div>
-				</form>
+				<fieldset>
+					<form>
+						<div class="g-grp-group">
+							<div><label for="inp-g">Grupo da atividade:</label></div>
+							<select name="group" id="inp-g">
+								<option value="1">grupo 1</option>
+								<option value="2">grupo 2</option>
+								<option value="3">grupo 3</option>
+							</select>
+							
+						</div>
+						<div class="g-grp-item">
+							<div><label for="inp-g">Item do Grupo</label></div>
+							<select id="inp-g">
+								<option value="1">Item I</option>
+								<option value="2">Item II</option>
+								<option value="3">Item III</option>
+							</select>
+						</div>
+						<div class="g-grp-inicio">
+							<div><label>Inicio da atividade</label for="data_begin"></div>
+							<input type="date" name="data_begin" id="inp-g">
+						</div>
+					</form>
+				</fieldset>
+				
 			</div>
 			
 		</div>
