@@ -64,6 +64,9 @@ div label{
 .sidebar{
 	background-color: rgba(0,0,0,.5);
 }
+.sidebar nav a{
+ 	padding-left: 50px;
+}
 .off{
 	display: none;
 }
@@ -134,6 +137,7 @@ legend{
 	text-align: center;
 	margin-bottom: 15px;
 	font-weight: bold;
+	-ms-text-align: center;
 }
 .fa{
 	margin-right: 7px;
