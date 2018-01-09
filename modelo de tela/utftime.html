@@ -3,24 +3,25 @@
 <head>
 	<title>horas complementares</title>
 	<link rel="stylesheet" type="text/css" href="utfstyle.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+	<link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="container">
 		<div class="header">
-			<div class="l-u"><p>UTFtime</p></div>
-			<div class="l-out"><a href="#">Logout</a></div>
+			<div class="l-u"><p><i class="fa fa-clock-o" aria-hidden="true"></i><span id="utf">UTF</span><span id="time">time</span></p></div>
+			<div class="l-out"><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></div>
 			<div id="bar">&#9776;</div>
 		</div>
 
 		<div class="sidebar off" id="on-off-s">
 			<nav class="n-i">	
-				<a href="#">Item 1</a>
-				<a href="#">Item 2</a>
-				<a href="#">Item 3</a>
-				<a href="#">Item 4</a>
-				<a href="#">Item 5</a>
-				<a href="#">Item 6</a>
+				<a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>Enviar</a>
+				<a href="#"><i class="fa fa-check-square" aria-hidden="true"></i>Enviados</a>
+				<a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i>Aprovados</a>
+				<a href="#"><i class="fa fa-thumbs-down" aria-hidden="true"></i>Devolvidos</a>
+				<a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i>Progresso</a>
+				<a href="#" id="log-desk"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
 
 			</nav>
 		</div>
@@ -37,10 +38,11 @@
 		<div class="main">
 			<div class="frm">
 				<fieldset>
+					<legend>Envio de documento</legend>
 					<form>
 						<div class="g-grp-group">
-							<div><label for="inp-g">Grupo da atividade:</label></div>
-							<select name="group" id="inp-g">
+							<div><label for="grp">Grupo da atividade:</label></div>
+							<select name="group" class="inp-g" id="grp">
 								<option value="1">grupo 1</option>
 								<option value="2">grupo 2</option>
 								<option value="3">grupo 3</option>
@@ -48,20 +50,34 @@
 							
 						</div>
 						<div class="g-grp-item">
-							<div><label for="inp-g">Item do Grupo</label></div>
-							<select id="inp-g">
+							<div><label for="it">Item do Grupo</label></div>
+							<select class="inp-g" id="it">
 								<option value="1">Item I</option>
 								<option value="2">Item II</option>
 								<option value="3">Item III</option>
 							</select>
 						</div>
-						<div class="g-grp-inicio">
-							<div><label>Inicio da atividade</label for="data_begin"></div>
-							<input type="date" name="data_begin" id="inp-g">
+						<div class="g-grp-begin">
+							<div><label for="dt-b">Inicio da atividade</label for="data_begin"></div>
+							<input type="date" name="data_begin" class="inp-g" id="dt-b">
+						</div>
+						<div class="g-grp-end">
+							<div><label for="dt-e">Término da atividade:</label></div>
+							<input type="date" name="data_end" class="inp-g" id="dt-e">
+						</div>
+						<div class="file">
+							<label for="fl-ch" id="name_file">Escolha o arquivo</label>
+							<input type="file" name="file_choosed" id="fl-ch" formenctype="multipart/form-data">
+						</div>
+						<div class="bt-send">
+							<button class="btn">Enviar</button>
 						</div>
 					</form>
 				</fieldset>
-				
+				<script type="text/javascript">
+					var nameFile = documente.getElementById("name_file");
+
+				</script>
 			</div>
 			
 		</div>
