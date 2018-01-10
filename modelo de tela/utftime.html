@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="utfstyle.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
 	<link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -22,7 +23,6 @@
 				<a href="#"><i class="fa fa-thumbs-down" aria-hidden="true"></i>Devolvidos</a>
 				<a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i>Progresso</a>
 				<a href="#" id="log-desk"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
-
 			</nav>
 		</div>
 		<script type="text/javascript">
@@ -59,24 +59,49 @@
 						</div>
 						<div class="g-grp-begin">
 							<div><label for="dt-b">Inicio da atividade:</label for="data_begin"></div>
-							<input type="date" name="data_begin" class="inp-g" id="dt-b">
+							<div><i class="fa fa-calendar-o" aria-hidden="true"></i>
+							<input type="date" name="data_begin" class="inp-g" id="dt-b"></div>
 						</div>
 						<div class="g-grp-end">
 							<div><label for="dt-e">Término da atividade:</label></div>
-							<input type="date" name="data_end" class="inp-g" id="dt-e">
+							<div class="input-group">
+								<i class="fa fa-calendar-o" aria-hidden="true"></i>
+								<input type="date" name="data_end" class="inp-g" id="dt-e">
+							</div>
 						</div>
 						<div class="file">
-							<label for="fl-ch" id="name_file"><i class="fa fa-file" aria-hidden="true"></i>Escolha o arquivo</label>
-							<input type="file" name="file_choosed" id="fl-ch" formenctype="multipart/form-data">
+							<label for="fl-ch" id="name_file"><i class="fa fa-upload" aria-hidden="true" id="icon-f"></i><span id="l-sp">Escolha o arquivo</span></label>
+							<input type="file" name="file_choosed" id="fl-ch" formenctype="multipart/form-data" accept=".doc, .pdf">
 						</div>
 						<div class="bt-send">
-							<button class="btn">Enviar</button>
+							<button class="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i>Enviar</button>
 						</div>
 					</form>
 				</fieldset>
 				<script type="text/javascript">
-					var nameFile = documente.getElementById("name_file");
+					$(document).ready(function(){
+						$("#fl-ch").on("change", function(e){
 
+							var file = $(this)[0].files;
+							var filename = e.target.value.split('\\').pop();
+							if(filename === ""){
+								$("#l-sp").text("Escolha o arquivo");
+								$("#icon-f").attr("class","fa fa-upload");
+							} else{
+								var filenameTmp = filename.slice(0, filename.lastIndexOf(".") - 1);
+								if(filenameTmp.length > 12){
+									var posfix = filename.slice(filename.lastIndexOf("."),filename.length);
+									var prefix = filename.slice(0,14);
+									var fix = prefix.concat(" ... ",posfix);
+									$("#l-sp").text(fix);
+								} else {
+									$("#l-sp").text(filename);
+								}
+								$("#icon-f").attr("class","fa fa-file");
+							}
+							
+						});
+					});
 				</script>
 			</div>
 			
